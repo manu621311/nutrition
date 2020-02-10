@@ -1,0 +1,17 @@
+ul.nav{padding:0;
+margin:0;
+list-style-type:none;
+background-color:black;
+width:100%;
+display:inline-block;
+}
+ul.nav li{display:block;
+float:left;
+padding:15px 35px;
+font-size:20px;
+font-weight:bold;
+}
+ul.nav li a{text-decoration:none;
+}
+ul.nav li:hover {background-color:grey;
+}
