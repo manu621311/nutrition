@@ -1,0 +1,9 @@
+{%extends 'base1.html'%}
+{%block title%}Account Settings{%endblock title%}
+{%block content%}
+<ol>
+<li><a href="{%url 'password_reset'%}">Reset Password</a></li>
+<li><a href="{%url 'password_change'%}">Change Password</a></li>
+<li><a href="{%url 'logout'%}">Logout</a></li>
+</ol>
+{%endblock content%}

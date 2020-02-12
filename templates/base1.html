@@ -16,7 +16,14 @@
 <li><a href="">Home</a></li>
 <li><a href="">Nutrifile</a></li>
 <li><a href="">Recipees</a></li>
-<li><a href="">Community</a></li>
+<li><a href="{%url 'post_list'%}">Community</a></li>
+{%if user.is_authenticated%}
+<li style="float:right"><a href="{%url 'account_settings'%}"><i class="glyphicon glyphicon-cog"></i></a></li>
+<li style="float:right;color:red">{{user.username}}</li>
+{%else%}
+<li style="float:right"><a href="{%url 'login'%}">Login</a></li>
+<li style="float:right"><a href="{%url 'sign_up'%}">SignUp</a></li>
+{%endif%}
 </ul>
 </header>
 <div>

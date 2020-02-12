@@ -33,8 +33,10 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'nutrition.apps.NutritionConfig',
+    'api.apps.ApiConfig',
     #3rd party
     'crispy_forms',
+    'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -127,3 +129,10 @@ AUTH_USER_MODEL='users.CustomUser'
 LOGIN_REDIRECT_URL='home'
 LOGOUT_REDIRECT_URL='home'
 CRISPY_TEMPLATE_PACK='bootstrap4'
+EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'apikey' 
+EMAIL_HOST_PASSWORD ='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'
+EMAIL_PORT =587 
+EMAIL_USE_TLS = True
+
