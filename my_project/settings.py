@@ -11,7 +11,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-
+from dotenv import load_dotenv
+load dot_env()
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -20,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '0szye%d54kgvgwvh!1d6_k_lxr=&lcp(r#&eb8eeg$-s2&xhsg'
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -132,7 +133,7 @@ CRISPY_TEMPLATE_PACK='bootstrap4'
 EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_HOST_USER = 'apikey' 
-EMAIL_HOST_PASSWORD ='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'
+EMAIL_HOST_PASSWORD=os.getenv("EMAIL_HOSTING_PASSWORD")
 EMAIL_PORT =587 
 EMAIL_USE_TLS = True
 
