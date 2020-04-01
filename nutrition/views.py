@@ -46,3 +46,6 @@ class PostDetailView(DetailView):
 class PostListView(ListView):
     model=Post
     template_name='post_list.html'
+    
+class Nutrifile(TemplateView):
+    template_name='nutrifile.html'

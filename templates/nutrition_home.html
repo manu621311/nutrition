@@ -1,4 +1,10 @@
 {%extends 'base1.html'%}
 {%load static%}
 {%block content%}
+<div ng-app="myApp" ng-controller="myCtrl">
+ <p>[[5+5]]</p>
+ <p>[[name]]</p>
+ <p>[[myWelcome]]</p>
+ <select ng-model="selectedsubject" ng-options="x.subject for x in myWelcome"></select>
+</div>
 {%endblock content%}
