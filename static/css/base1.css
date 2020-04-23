@@ -16,3 +16,6 @@ ul.nav li a{text-decoration:none;
 ul.nav li:hover {background-color:grey;
 }
 *{box-sizing:border-box;}
+#search_text{
+    margin-top:10px;
+}

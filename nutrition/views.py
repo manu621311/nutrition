@@ -4,7 +4,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.exceptions import PermissionDenied
 from django.views.generic.edit import CreateView,UpdateView,DeleteView
 from django.urls import reverse_lazy
-from .models import Post
+from .models import Post,Nutrifile
+from django.http import HttpResponse,JsonResponse
 # Create your views here.
 class HomePageView(TemplateView):
       template_name='home.html'
@@ -47,5 +48,21 @@ class PostListView(ListView):
     model=Post
     template_name='post_list.html'
     
-class Nutrifile(TemplateView):
+class NutriFile(ListView):
+    context_object_name='items'
+    model=Nutrifile
     template_name='nutrifile.html'
+    """def respond_data(self,request):
+        x=request.GET.get('search_text')
+        if x:
+            return HttpResponse('dk')
+        else:
+            return None"""
+
+def Filtered(request):
+    x=request.GET.get('search_text')
+    #return JsonResponse({"dk":)
+    if x:
+        return JsonResponse({'dk':x})
+    else:
+        return None

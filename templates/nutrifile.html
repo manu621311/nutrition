@@ -3,4 +3,16 @@
 {%block title%}Nutrifile{%endblock title%}
 {%block content%}
 <h1>Nutrifile</h1>
+<form method="GET" action="" id="submitForm">{% csrf_token %}
+    <div>
+    <label>Search item:</label>
+    <input name="search_text" list="search_options" id="search_text">
+    <datalist id="search_options">
+        {%for item in items%}
+        <option value="{{item.name}}">
+        {%endfor%}
+        </datalist>
+    <input type="submit" class="btn btn-info ml-3" id="submit" value="Go">
+</form>
+</div>
 {%endblock content%}
