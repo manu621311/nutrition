@@ -1,10 +1,146 @@
 {%extends 'base1.html'%}
 {%load static%}
 {%block content%}
-<div ng-app="myApp" ng-controller="myCtrl">
- <p>[[5+5]]</p>
- <p>[[name]]</p>
- <p>[[myWelcome]]</p>
- <select ng-model="selectedsubject" ng-options="x.subject for x in myWelcome"></select>
+<div style="margin-bottom:15px;">
+<img src="{% static 'images/home_tile.jpg'%}" style="width=100%;position: relative;">
+<!--<h1 class="home_tile_text">Nutrition</h1>-->
 </div>
+<div class="home_slide">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+  
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="{% static "images/covid.jpg" %}" alt="covid">
+        <div class="carousel-caption">
+          <h3>Covid-19</h3>
+          <p>Precautions to take.....</p>
+        </div>
+      </div>
+  
+      <div class="item">
+        <img src="{% static "images/recipee.jpg" %}" alt="recipee">
+        <div class="carousel-caption">
+          <h3>Delicious</h3>
+          <p>Recipee section to be updated soon...</p>
+        </div>
+      </div>
+  
+      <div class="item">
+        <img src="{% static "images/items.jpg" %}" alt="items">
+        <div class="carousel-caption">
+          <h3>Nutrition</h3>
+          <p>Browse over to nutrifile.</p>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+<br>
+
+  
+    <div style="margin-left:10px;" class="row">
+      <h1 style="margin-left:25px">Article Board:</h1>
+      <div class="col-7 rings_container">
+        <h3>Must Read Concepts:</h3>
+        <div style="margin-left:30px;"class="col-3">
+        <div class="gallery1">
+          <a target="_blank" href="">
+            <img src="{%static 'images/daily_nutrients.jpg'%}" alt="nutrients" width="600" height="400" >
+          </a>
+          <div class="desc" style="font-weight: bolder;">Essential Nutrients Required For Us</div>
+        </div>
+        </div>
+        <div style="margin-left:30px;" class="col-3">
+        <div class="gallery1">
+          <a target="_blank" href="">
+            <img src="{%static 'images/diet.jpg'%}" alt="diet" width="600" height="400">
+          </a>
+          <div class="desc" style="font-weight: bolder;">Significance Of Balanced Diet in Our Life        </div>
+        </div>
+        </div>
+        <div style="margin-left:30px;margin-right: 30px;" class="col-3">
+          <div class="gallery1">
+            <a target="_blank" href="">
+              <img src="{%static 'images/rest.jpg'%}" alt="rest" width="600" height="400">
+            </a>
+            <div class="desc" style="font-weight: bolder;">How Is Rest Important To Repair Our Body</div>
+          </div>
+        </div>
+       <br>
+
+      
+        <h3>General Advisories:</h3> 
+        <div style="margin-left:30px;"class="col-3">
+        <div class="gallery2">
+          <a target="_blank" href="">
+            <img src="{%static 'images/summer.png'%}" alt="nutrients" width="600" height="400" >
+          </a>
+          <div class="desc">Things to Keep in mind this summer</div>
+        </div>
+        </div>
+        <div style="margin-left:30px;" class="col-3">
+        <div class="gallery2">
+          <a target="_blank" href="">
+            <img src="{%static 'images/prevent_covid.png'%}" alt="diet" width="600" height="400">
+          </a>
+          <div class="desc">Preventive measures for Covid-19</div>
+        </div>
+        </div>
+        <div style="margin-left:30px;" class="col-3">
+          <div class="gallery2">
+            <a target="_blank" href="">
+              <img src="{%static 'images/pollution.png'%}" alt="rest" width="600" height="400">
+            </a>
+            <div class="desc" >How To Reverse Damage done by Pollution</div>
+          </div>
+        </div>
+      
+      
+        <div style="margin-left:30px;"class="col-3">
+        <div class="gallery2">
+          <a target="_blank" href="">
+            <img src="{%static 'images/boiled_vs_fried.png'%}" alt="nutrients" width="600" height="400" >
+          </a>
+          <div class="desc">Comparison of Fried and Boiled Food</div>
+        </div>
+        </div>
+        <div style="margin-left:30px;" class="col-3">
+        <div class="gallery2">
+          <a target="_blank" href="">
+            <img src="{%static 'images/chemicals.png'%}" alt="diet" width="600" height="400">
+          </a>
+          <div class="desc">Preservatives to Never Consume</div>
+        </div>
+        </div>
+        <div style="margin-left:30px;" class="col-3">
+          <div class="gallery2">
+            <a target="_blank" href="">
+              <img src="{%static 'images/junk_food.png'%}" alt="rest" width="600" height="400">
+            </a>
+            <div class="desc" >Effect of Junk Food on our Health</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4 news_board">
+          <div class="news_board_header"><strong>News</strong>Board</div>
+      </div>
+    </div>
+    
 {%endblock content%}

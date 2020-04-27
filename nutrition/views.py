@@ -6,7 +6,24 @@ from django.views.generic.edit import CreateView,UpdateView,DeleteView
 from django.urls import reverse_lazy
 from .models import Post,Nutrifile
 from django.http import HttpResponse,JsonResponse
+from api.serializers import NutriSerializer,nutriSerializer
+from rest_framework.renderers import JSONRenderer
+import json
 # Create your views here.
+
+def objectserializer():
+    l=list()
+    for i in queryset1:
+        item=nutriSerializer(i)
+        l.append(item.data)
+    return l
+queryset1=Nutrifile.objects.all()
+serializerdata=objectserializer()#nutriSerializer(queryset1,many=True)
+#items=serializerdata.data
+#json=JSONRenderer().render(items)
+
+
+
 class HomePageView(TemplateView):
       template_name='home.html'
       
@@ -52,17 +69,15 @@ class NutriFile(ListView):
     context_object_name='items'
     model=Nutrifile
     template_name='nutrifile.html'
-    """def respond_data(self,request):
-        x=request.GET.get('search_text')
-        if x:
-            return HttpResponse('dk')
-        else:
-            return None"""
+    
 
 def Filtered(request):
     x=request.GET.get('search_text')
-    #return JsonResponse({"dk":)
     if x:
-        return JsonResponse({'dk':x})
-    else:
-        return None
+        for every_record in serializerdata:
+            if(x==every_record['name']):
+                req_item=every_record
+                return HttpResponse(json.dumps(every_record))
+        else:
+            return None
+    

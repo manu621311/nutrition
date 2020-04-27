@@ -2,9 +2,9 @@
 {%load static%}
 {%block title%}Nutrifile{%endblock title%}
 {%block content%}
+<div style="margin-left:20px;">
 <h1>Nutrifile</h1>
-<form method="GET" action="" id="submitForm">{% csrf_token %}
-    <div>
+<form method="GET" action="" id="submitForm">{% csrf_token %}  
     <label>Search item:</label>
     <input name="search_text" list="search_options" id="search_text">
     <datalist id="search_options">
@@ -12,7 +12,57 @@
         <option value="{{item.name}}">
         {%endfor%}
         </datalist>
-    <input type="submit" class="btn btn-info ml-3" id="submit" value="Go">
+    <input type="submit" class="btn btn-primary " id="submit" value="Go">
+    <p id="correction">Please enter an item...</p>
 </form>
+</div>
+<div class="row main" id="content">
+    <div class="col-5">
+        <div>
+            <img src="" id="image">
+        </div>
+        <div style="margin-top:30px;">
+            <p id="detail" style="text-align: justify;"></p>
+        </div>
+    </div>
+    <div class="col-6" id="chart_css" style="margin-top:-18px;">
+        <h3 id="serving_size"></h3>
+        <div>
+        <p>Calories:</p>
+        <div class="container_css">
+            <div class="coloured-bar" id="cal" style="margin-bottom: 10px;"></div>
+          </div>
+          </div>
+          <div>
+          <p>Total Fat:</p>
+          <div class="container_css">
+            <div class="coloured-bar" id="tot_fat" style="margin-bottom: 10px;"></div>
+          </div>
+        </div>
+          <div>
+          <p>Protein:</p>
+          <div class="container_css">
+            <div class="coloured-bar" id="pro" style="margin-bottom: 10px;"></div>
+          </div>
+        </div>
+          <div>
+          <p>Cholestrol:</p>
+          <div class="container_css">
+            <div class="coloured-bar" id="cho" style="margin-bottom: 10px;"></div>
+          </div>
+        </div>
+        <div>
+          <p>Carbohydrates:</p>
+          <div class="container_css">
+            <div class="coloured-bar" id="carb" style="margin-bottom: 10px;"></div>
+          </div>
+        </div>
+          <div>
+          <p>Fibres:</p>
+          <div class="container_css">
+            <div class="coloured-bar" id="fib" style="margin-bottom: 10px;"></div>
+          </div>
+        </div>
+    </div>
 </div>
 {%endblock content%}

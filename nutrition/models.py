@@ -18,6 +18,7 @@ class Post(models.Model):
              
 class Nutrifile(models.Model):
     name=models.CharField(max_length=100,null=True)
+    detail=models.CharField(max_length=2000,null=True)
     image=models.ImageField()
     serving_size=models.DecimalField(max_digits=8,decimal_places=1)
     calories=models.DecimalField(max_digits=8,decimal_places=1)
@@ -26,6 +27,7 @@ class Nutrifile(models.Model):
     cholestrol=models.DecimalField(max_digits=8,decimal_places=1)
     carbohydrates=models.DecimalField(max_digits=8,decimal_places=1)
     fiber=models.DecimalField(max_digits=8,decimal_places=1)
+
     
     def __str__(self):
         return self.name    
